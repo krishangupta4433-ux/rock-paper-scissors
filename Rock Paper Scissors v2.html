@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)http://127.0.0.1:5500/rock-paper-scissors/rock-paper-scissors-v2/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="./Rock Paper Scissors v2_files/style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Rock Paper Scissors</h1>
+    <p class="subtitle">First to 3 wins! (Press R, P, or S)</p>
+
+    <div class="scoreboard">
+      <div>You: <span id="player-score">0</span></div>
+      <div>Computer: <span id="computer-score">0</span></div>
+    </div>
+
+    <div class="choices" id="choice-buttons">
+      <button id="btn-rock" onclick="playGame('rock')">🪨 Rock</button>
+      <button id="btn-paper" onclick="playGame('paper')">📄 Paper</button>
+      <button id="btn-scissors" onclick="playGame('scissors')">✂️ Scissors</button>
+    </div>
+
+    <div class="result-box">
+      <p id="choices-display">Make your move!</p>
+      <h2 id="result-text" style="color: rgb(243, 139, 168);"></h2>
+    </div>
+
+    <button class="reset-btn" id="reset-btn" onclick="resetGame()">Reset Match</button>
+  </div>
+
+  <script src="./Rock Paper Scissors v2_files/script.js.download"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
